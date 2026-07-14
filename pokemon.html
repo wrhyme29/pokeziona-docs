@@ -901,9 +901,9 @@
     return Number(pokemon.generation) === 10;
   }
 
-  function isZionanForm(pokemon) {
+  function isZioniForm(pokemon) {
     const text = `${pokemon.form_name || ""} ${pokemon.name || ""}`.toLowerCase();
-    return Number(pokemon.form_number || 0) > 0 && text.includes("Zionan");
+    return Number(pokemon.form_number || 0) > 0 && text.includes("Zioni");
   }
 
   function isRegionalVariantPokemon(pokemon) {
@@ -912,7 +912,7 @@
     return (
       Number(pokemon.form_number || 0) > 0 &&
       (
-        text.includes("Zionan") ||
+        text.includes("Zioni") ||
         text.includes("alolan") ||
         text.includes("galarian") ||
         text.includes("hisuian") ||
@@ -925,11 +925,11 @@
     return isRegionalVariantPokemon(pokemon);
   }
 
-  function hasZionanReplacement(pokemon) {
+  function hasZioniReplacement(pokemon) {
     return allPokemon.some(other =>
       other.species_id === pokemon.species_id &&
       other.id !== pokemon.id &&
-      isZionanForm(other) &&
+      isZioniForm(other) &&
       other.regional_dex_number !== "" &&
       other.regional_dex_number != null
     );
@@ -948,17 +948,17 @@
     if (!inRegionalDex) return false;
 
     const isRegionalVariant = isRegionalVariantPokemon(pokemon);
-    const isZionan = isZionanForm(pokemon);
+    const isZioni = isZioniForm(pokemon);
 
     if (Number(pokemon.form_number || 0) > 0 && !isRegionalVariant) {
       return false;
     }
 
-    if (Number(pokemon.form_number || 0) > 0 && !isZionan) {
+    if (Number(pokemon.form_number || 0) > 0 && !isZioni) {
       return false;
     }
 
-    if (Number(pokemon.form_number || 0) === 0 && hasZionanReplacement(pokemon)) {
+    if (Number(pokemon.form_number || 0) === 0 && hasZioniReplacement(pokemon)) {
       return false;
     }
 
