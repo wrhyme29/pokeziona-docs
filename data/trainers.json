@@ -1,0 +1,140 @@
+[
+  {
+    "id": "LEADER_TelAviv",
+    "trainer_class": "LEADER_TelAviv",
+    "trainer_type": "LEADER_TelAviv",
+    "name": "Avi",
+    "image": "LEADER_Mark.png",
+    "section": "gym_leaders",
+    "teams": [
+      {
+        "version": "0 Badges",
+        "battle_type": "",
+        "items": [
+          "Potion",
+          "Potion"
+        ],
+        "pokemon": [
+          {
+            "id": "RATTATA",
+            "species_id": "RATTATA",
+            "level": 12,
+            "moves": [
+              {
+                "id": "TACKLE",
+                "name": "Tackle"
+              },
+              {
+                "id": "QUICKATTACK",
+                "name": "Quick Attack"
+              },
+              {
+                "id": "TAILWHIP",
+                "name": "Tail Whip"
+              }
+            ],
+            "gender": "Male",
+            "ability_index": 0,
+            "name": "Rattata",
+            "types": [
+              "NORMAL"
+            ],
+            "ability": "Guts"
+          },
+          {
+            "id": "RATICATE",
+            "species_id": "RATICATE",
+            "level": 13,
+            "moves": [
+              {
+                "id": "RETURN",
+                "name": "Return"
+              },
+              {
+                "id": "TAILWHIP",
+                "name": "Tail Whip"
+              },
+              {
+                "id": "GROWL",
+                "name": "Growl"
+              }
+            ],
+            "gender": "Male",
+            "ability_index": 0,
+            "name": "Raticate",
+            "types": [
+              "NORMAL"
+            ],
+            "ability": "Guts"
+          }
+        ]
+      },
+      {
+        "version": "Rematch",
+        "battle_type": "DoubleBattle",
+        "items": [
+          "Full Restore",
+          "Full Restore"
+        ],
+        "pokemon": [
+          {
+            "id": "RATTATA",
+            "species_id": "RATTATA",
+            "level": 23,
+            "moves": [
+              {
+                "id": "TACKLE",
+                "name": "Tackle"
+              },
+              {
+                "id": "QUICKATTACK",
+                "name": "Quick Attack"
+              },
+              {
+                "id": "TAILWHIP",
+                "name": "Tail Whip"
+              }
+            ],
+            "gender": "Male",
+            "ability_index": 0,
+            "name": "Rattata",
+            "types": [
+              "NORMAL"
+            ],
+            "ability": "Guts"
+          },
+          {
+            "id": "RATICATE",
+            "species_id": "RATICATE",
+            "level": 25,
+            "moves": [
+              {
+                "id": "RETURN",
+                "name": "Return"
+              },
+              {
+                "id": "TAILWHIP",
+                "name": "Tail Whip"
+              },
+              {
+                "id": "GROWL",
+                "name": "Growl"
+              }
+            ],
+            "gender": "Male",
+            "ability_index": 0,
+            "name": "Raticate",
+            "types": [
+              "NORMAL"
+            ],
+            "ability": "Guts"
+          }
+        ]
+      }
+    ],
+    "town": "Tel Aviv",
+    "gym_badge": "Regular Badge",
+    "type_specialty": "Normal",
+    "tm_rewarded": "TM 101 Return"
+  }
+]

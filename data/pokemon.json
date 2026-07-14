@@ -1,0 +1,1845 @@
+[
+  {
+    "id": "RATTATA",
+    "species_id": "RATTATA",
+    "name": "Rattata",
+    "base_name": "Rattata",
+    "form_number": 0,
+    "form_name": "",
+    "regional_dex_number": 10,
+    "national_dex_number": 10,
+    "generation": 1,
+    "types": [
+      "NORMAL"
+    ],
+    "abilities": [
+      {
+        "id": "RUNAWAY",
+        "name": "Run Away",
+        "description": "Enables a sure getaway from wild Pokémon."
+      },
+      {
+        "id": "GUTS",
+        "name": "Guts",
+        "description": "Boosts Attack if there is a status problem."
+      }
+    ],
+    "hidden_abilities": [
+      {
+        "id": "HUSTLE",
+        "name": "Hustle",
+        "description": "Boosts the Attack stat, but lowers accuracy."
+      }
+    ],
+    "base_stats": [
+      30,
+      56,
+      35,
+      72,
+      25,
+      35
+    ],
+    "base_stats_dict": {
+      "HP": 30,
+      "ATK": 56,
+      "DEF": 35,
+      "SPA": 25,
+      "SPD": 35,
+      "SPE": 72
+    },
+    "base_stat_total": 253,
+    "growth_rate": "Medium",
+    "gender_ratio": "Female50Percent",
+    "gender_ratio_display": "Male: 1/2, Female: 1/2",
+    "evs": [
+      {
+        "stat": "SPEED",
+        "name": "Speed",
+        "amount": 1
+      }
+    ],
+    "ev_yield": [
+      {
+        "stat": "SPEED",
+        "name": "Speed",
+        "amount": 1
+      }
+    ],
+    "ev_yield_text": "1 Speed",
+    "catch_rate": 255,
+    "base_exp": 51,
+    "height": null,
+    "weight": null,
+    "kind": "",
+    "color": "Purple",
+    "shape": "Quadruped",
+    "habitat": "Grassland",
+    "pokedex": "A Rattata is cautious in the extreme. Even while it is asleep, it constantly moves its ears and listens for danger. It will make its nest anywhere.",
+    "locations": [
+      {
+        "map_id": "2",
+        "location": "Kvish 1",
+        "method": "LandDay",
+        "method_rate": 16,
+        "chance": 10,
+        "encounter_rate": 10,
+        "encounter_rate_text": "10%",
+        "min_level": 5,
+        "max_level": 5
+      }
+    ],
+    "moves": {
+      "level_up": [
+        {
+          "level": 1,
+          "id": "TAILWHIP",
+          "name": "Tail Whip",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 100,
+          "description": "The user wags its tail cutely, making opposing Pokémon less wary and lowering their Defense stat."
+        },
+        {
+          "level": 1,
+          "id": "TACKLE",
+          "name": "Tackle",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 40,
+          "pp": 35,
+          "accuracy": 100,
+          "description": "A physical attack in which the user charges and slams into the target with its whole body."
+        },
+        {
+          "level": 4,
+          "id": "QUICKATTACK",
+          "name": "Quick Attack",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 40,
+          "pp": 30,
+          "accuracy": 100,
+          "description": "The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first."
+        },
+        {
+          "level": 7,
+          "id": "FOCUSENERGY",
+          "name": "Focus Energy",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user takes a deep breath and focuses so that critical hits land more easily."
+        },
+        {
+          "level": 10,
+          "id": "BITE",
+          "name": "Bite",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The target is bitten with viciously sharp fangs. It may make the target flinch."
+        },
+        {
+          "level": 13,
+          "id": "LASERFOCUS",
+          "name": "Laser Focus",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user focuses intensely. The attack on the next turn always results in a critical hit."
+        },
+        {
+          "level": 16,
+          "id": "TAKEDOWN",
+          "name": "Take Down",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 90,
+          "pp": 20,
+          "accuracy": 85,
+          "description": "A reckless, full-body charge attack for slamming into the foe. It also damages the user a little."
+        },
+        {
+          "level": 19,
+          "id": "ASSURANCE",
+          "name": "Assurance",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "If the target has already taken some damage in the same turn, this attack's power is doubled."
+        },
+        {
+          "level": 22,
+          "id": "CRUNCH",
+          "name": "Crunch",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user crunches up the target with sharp fangs. It may also lower the target's Defense stat."
+        },
+        {
+          "level": 25,
+          "id": "SUCKERPUNCH",
+          "name": "Sucker Punch",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 70,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move enables the user to attack first. It fails if the target is not readying an attack, however."
+        },
+        {
+          "level": 28,
+          "id": "SUPERFANG",
+          "name": "Super Fang",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 10,
+          "accuracy": 90,
+          "description": "The user chomps hard on the target with its sharp front fangs. It cuts the target's HP to half."
+        },
+        {
+          "level": 31,
+          "id": "DOUBLEEDGE",
+          "name": "Double-Edge",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 120,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A reckless, life-risking tackle. It also damages the user by a fairly large amount, however."
+        },
+        {
+          "level": 34,
+          "id": "ENDEAVOR",
+          "name": "Endeavor",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "An attack move that cuts down the target's HP to equal the user's HP."
+        }
+      ],
+      "tutor": [
+        {
+          "id": "ATTRACT",
+          "name": "Attract",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "If it is the opposite gender of the user, the target becomes infatuated and less likely to attack."
+        },
+        {
+          "id": "BLIZZARD",
+          "name": "Blizzard",
+          "type": "ICE",
+          "category": "Special",
+          "power": 110,
+          "pp": 5,
+          "accuracy": 70,
+          "description": "A howling blizzard is summoned to strike the opposing team. It may also freeze them solid."
+        },
+        {
+          "id": "BODYSLAM",
+          "name": "Body Slam",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 85,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user drops onto the target with its full body weight. It may leave the target with paralysis."
+        },
+        {
+          "id": "CAPTIVATE",
+          "name": "Captivate",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "If it is the opposite gender of the user, the target is charmed into harshly lowering its Sp. Atk stat."
+        },
+        {
+          "id": "CHARGEBEAM",
+          "name": "Charge Beam",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 50,
+          "pp": 10,
+          "accuracy": 90,
+          "description": "The user fires a concentrated bundle of electricity. It may also raise the user's Sp. Atk stat."
+        },
+        {
+          "id": "CONFIDE",
+          "name": "Confide",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "The user tells the target a secret. The target loses focus and its Sp. Atk stat is lowered."
+        },
+        {
+          "id": "COUNTER",
+          "name": "Counter",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A retaliation move that counters any physical attack, inflicting double the damage taken."
+        },
+        {
+          "id": "COVET",
+          "name": "Covet",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The user endearingly approaches the target, then steals the target's held item."
+        },
+        {
+          "id": "CUT",
+          "name": "Cut",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 50,
+          "pp": 30,
+          "accuracy": 95,
+          "description": "The target is cut with a scythe or a claw. It can also be used to cut down thin trees."
+        },
+        {
+          "id": "DEFENSECURL",
+          "name": "Defense Curl",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 40,
+          "accuracy": 0,
+          "description": "The user curls up to conceal weak spots and raise its Defense stat."
+        },
+        {
+          "id": "DIG",
+          "name": "Dig",
+          "type": "GROUND",
+          "category": "Physical",
+          "power": 80,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user burrows, then attacks on the second turn. It can also be used to exit dungeons."
+        },
+        {
+          "id": "DOUBLEEDGE",
+          "name": "Double-Edge",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 120,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A reckless, life-risking tackle. It also damages the user by a fairly large amount, however."
+        },
+        {
+          "id": "DOUBLETEAM",
+          "name": "Double Team",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 15,
+          "accuracy": 0,
+          "description": "By moving rapidly, the user makes illusory copies of itself to raise its evasiveness."
+        },
+        {
+          "id": "ENDEAVOR",
+          "name": "Endeavor",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "An attack move that cuts down the target's HP to equal the user's HP."
+        },
+        {
+          "id": "ENDURE",
+          "name": "Endure",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user endures any attack with at least 1 HP. Its chance of failing rises if it is used in succession."
+        },
+        {
+          "id": "FACADE",
+          "name": "Facade",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "An attack move that doubles its power if the user is poisoned, burned, or has paralysis."
+        },
+        {
+          "id": "FRUSTRATION",
+          "name": "Frustration",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A full-power attack that grows more powerful the less the user likes its Trainer."
+        },
+        {
+          "id": "GRASSKNOT",
+          "name": "Grass Knot",
+          "type": "GRASS",
+          "category": "Special",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The user snares the target with grass and trips it. The heavier the target, the greater the damage."
+        },
+        {
+          "id": "HEADBUTT",
+          "name": "Headbutt",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user sticks out its head and attacks by charging into the foe. It may also make the target flinch."
+        },
+        {
+          "id": "HIDDENPOWER",
+          "name": "Hidden Power",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 60,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A unique attack that varies in type and intensity depending on the Pokémon using it."
+        },
+        {
+          "id": "ICEBEAM",
+          "name": "Ice Beam",
+          "type": "ICE",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The target is struck with an icy-cold beam of energy. It may also freeze the target solid."
+        },
+        {
+          "id": "ICYWIND",
+          "name": "Icy Wind",
+          "type": "ICE",
+          "category": "Special",
+          "power": 55,
+          "pp": 15,
+          "accuracy": 95,
+          "description": "The user attacks with a gust of chilled air. It also lowers the targets' Speed stat."
+        },
+        {
+          "id": "IRONTAIL",
+          "name": "Iron Tail",
+          "type": "STEEL",
+          "category": "Physical",
+          "power": 100,
+          "pp": 15,
+          "accuracy": 75,
+          "description": "The target is slammed with a steel-hard tail. It may also lower the target's Defense stat."
+        },
+        {
+          "id": "LASTRESORT",
+          "name": "Last Resort",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 140,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move can be used only after the user has used all the other moves it knows in the battle."
+        },
+        {
+          "id": "MIMIC",
+          "name": "Mimic",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user copies the move last used by the foe. The move can be used until the user is switched out."
+        },
+        {
+          "id": "MUDSLAP",
+          "name": "Mud-Slap",
+          "type": "GROUND",
+          "category": "Special",
+          "power": 20,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user hurls mud in the target's face to inflict damage and lower its accuracy."
+        },
+        {
+          "id": "NATURALGIFT",
+          "name": "Natural Gift",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user draws power to attack by using its held Berry. The Berry determines its type and power."
+        },
+        {
+          "id": "PLUCK",
+          "name": "Pluck",
+          "type": "FLYING",
+          "category": "Physical",
+          "power": 60,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The user pecks the target. If the target is holding a Berry, the user eats it and gains its effect."
+        },
+        {
+          "id": "PROTECT",
+          "name": "Protect",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "It enables the user to evade all attacks. Its chance of failing rises if it is used in succession."
+        },
+        {
+          "id": "RAINDANCE",
+          "name": "Rain Dance",
+          "type": "WATER",
+          "category": "Status",
+          "power": null,
+          "pp": 5,
+          "accuracy": 0,
+          "description": "The user summons a heavy rain that falls for five turns, powering up Water-type moves."
+        },
+        {
+          "id": "REST",
+          "name": "Rest",
+          "type": "PSYCHIC",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user goes to sleep for two turns. It fully restores the user's HP and heals any status problem."
+        },
+        {
+          "id": "RETALIATE",
+          "name": "Retaliate",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "Gets revenge for a fainted ally. If an ally fainted in the last turn, this attack's damage increases."
+        },
+        {
+          "id": "RETURN",
+          "name": "Return",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A full-power attack that grows more powerful the more the user likes its Trainer."
+        },
+        {
+          "id": "ROCKSMASH",
+          "name": "Rock Smash",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 40,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user attacks with a punch that can shatter a rock. It may also lower the foe's Defense stat."
+        },
+        {
+          "id": "ROUND",
+          "name": "Round",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 60,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user attacks with a song. Others can join in the Round and make the attack do greater damage."
+        },
+        {
+          "id": "SECRETPOWER",
+          "name": "Secret Power",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The user attacks with a secret power. Its added effects vary depending on the user's environment."
+        },
+        {
+          "id": "SHADOWBALL",
+          "name": "Shadow Ball",
+          "type": "GHOST",
+          "category": "Special",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user hurls a shadowy blob at the target. It may also lower the target's Sp. Def stat."
+        },
+        {
+          "id": "SHOCKWAVE",
+          "name": "Shock Wave",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 60,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "The user strikes the target with a quick jolt of electricity. This attack cannot be evaded."
+        },
+        {
+          "id": "SLEEPTALK",
+          "name": "Sleep Talk",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "While it is asleep, the user randomly uses one of the moves it knows."
+        },
+        {
+          "id": "SLUDGEBOMB",
+          "name": "Sludge Bomb",
+          "type": "POISON",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "Unsanitary sludge is hurled at the target. It may also poison the target."
+        },
+        {
+          "id": "SNORE",
+          "name": "Snore",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 50,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "An attack that can be used only if the user is asleep. The harsh noise may also make the target flinch."
+        },
+        {
+          "id": "SUBSTITUTE",
+          "name": "Substitute",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user makes a copy of itself using some of its HP. The copy serves as the user's decoy."
+        },
+        {
+          "id": "SUCKERPUNCH",
+          "name": "Sucker Punch",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 70,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move enables the user to attack first. It fails if the target is not readying an attack, however."
+        },
+        {
+          "id": "SUNNYDAY",
+          "name": "Sunny Day",
+          "type": "FIRE",
+          "category": "Status",
+          "power": null,
+          "pp": 5,
+          "accuracy": 0,
+          "description": "The user intensifies the sun for five turns, powering up Fire-type moves."
+        },
+        {
+          "id": "SUPERFANG",
+          "name": "Super Fang",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 10,
+          "accuracy": 90,
+          "description": "The user chomps hard on the target with its sharp front fangs. It cuts the target's HP to half."
+        },
+        {
+          "id": "SWAGGER",
+          "name": "Swagger",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 15,
+          "accuracy": 85,
+          "description": "The user enrages and confuses the target. However, it also sharply raises the target's Attack stat."
+        },
+        {
+          "id": "SWIFT",
+          "name": "Swift",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 60,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "Star-shaped rays are shot at the opposing team. This attack never misses."
+        },
+        {
+          "id": "TAUNT",
+          "name": "Taunt",
+          "type": "DARK",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The target is taunted into a rage that allows it to use only attack moves for three turns."
+        },
+        {
+          "id": "THIEF",
+          "name": "Thief",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The user attacks and steals the foe's held item simultaneously. It can't steal if the user holds an item."
+        },
+        {
+          "id": "THUNDER",
+          "name": "Thunder",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 110,
+          "pp": 10,
+          "accuracy": 70,
+          "description": "A wicked thunderbolt is dropped on the foe to inflict damage. It may also leave the target paralyzed."
+        },
+        {
+          "id": "THUNDERBOLT",
+          "name": "Thunderbolt",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 90,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A strong electric blast is loosed at the target. It may also leave the target with paralysis."
+        },
+        {
+          "id": "THUNDERWAVE",
+          "name": "Thunder Wave",
+          "type": "ELECTRIC",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 90,
+          "description": "A weak electric charge is launched at the target. It causes paralysis if it hits."
+        },
+        {
+          "id": "UPROAR",
+          "name": "Uproar",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user attacks in an uproar for three turns. Over that time, no one can fall asleep."
+        },
+        {
+          "id": "UTURN",
+          "name": "U-turn",
+          "type": "BUG",
+          "category": "Physical",
+          "power": 70,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "After making its attack, the user rushes back to switch places with a party Pokémon in waiting."
+        },
+        {
+          "id": "WILDCHARGE",
+          "name": "Wild Charge",
+          "type": "ELECTRIC",
+          "category": "Physical",
+          "power": 90,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user shrouds itself in electricity and smashes into its foe. It also damages the user a little."
+        },
+        {
+          "id": "WORKUP",
+          "name": "Work Up",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user is roused, and its Attack and Sp. Atk stats increase."
+        },
+        {
+          "id": "ZENHEADBUTT",
+          "name": "Zen Headbutt",
+          "type": "PSYCHIC",
+          "category": "Physical",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 90,
+          "description": "The user focuses its willpower to its head and attacks the foe. It may also make the target flinch."
+        }
+      ],
+      "egg": [
+        {
+          "id": "BITE",
+          "name": "Bite",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The target is bitten with viciously sharp fangs. It may make the target flinch."
+        },
+        {
+          "id": "COUNTER",
+          "name": "Counter",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A retaliation move that counters any physical attack, inflicting double the damage taken."
+        },
+        {
+          "id": "FINALGAMBIT",
+          "name": "Final Gambit",
+          "type": "FIGHTING",
+          "category": "Special",
+          "power": 1,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "The user risks all to attack the foe. The user faints but does damage equal to its HP."
+        },
+        {
+          "id": "FLAMEWHEEL",
+          "name": "Flame Wheel",
+          "type": "FIRE",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The user cloaks itself in fire and charges at the target. It may also leave the target with a burn."
+        },
+        {
+          "id": "FURYSWIPES",
+          "name": "Fury Swipes",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 18,
+          "pp": 15,
+          "accuracy": 80,
+          "description": "The target is raked with sharp claws or scythes for two to five times in quick succession."
+        },
+        {
+          "id": "LASTRESORT",
+          "name": "Last Resort",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 140,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move can be used only after the user has used all the other moves it knows in the battle."
+        },
+        {
+          "id": "REVENGE",
+          "name": "Revenge",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 60,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "An attack move that inflicts double the damage if the user has been hurt by the foe in the same turn."
+        },
+        {
+          "id": "REVERSAL",
+          "name": "Reversal",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 1,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "An all-out attack that becomes more powerful the less HP the user has."
+        },
+        {
+          "id": "SCREECH",
+          "name": "Screech",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 40,
+          "accuracy": 85,
+          "description": "An earsplitting screech harshly reduces the target's Defense stat."
+        },
+        {
+          "id": "UPROAR",
+          "name": "Uproar",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user attacks in an uproar for three turns. Over that time, no one can fall asleep."
+        }
+      ]
+    },
+    "evolution": {
+      "next": [
+        {
+          "species_id": "RATICATE",
+          "name": "Raticate",
+          "method": "Level",
+          "parameter": "20"
+        }
+      ],
+      "final": [
+        {
+          "species_id": "RATICATE",
+          "name": "Raticate"
+        }
+      ]
+    },
+    "sprites": {
+      "regular": "images/pokemon/RATTATA.png",
+      "shiny": "images/pokemon-shiny/RATTATA.png"
+    },
+    "forms": []
+  },
+  {
+    "id": "RATICATE",
+    "species_id": "RATICATE",
+    "name": "Raticate",
+    "base_name": "Raticate",
+    "form_number": 0,
+    "form_name": "",
+    "regional_dex_number": 27,
+    "national_dex_number": 20,
+    "generation": 1,
+    "types": [
+      "NORMAL"
+    ],
+    "abilities": [
+      {
+        "id": "RUNAWAY",
+        "name": "Run Away",
+        "description": "Enables a sure getaway from wild Pokémon."
+      },
+      {
+        "id": "GUTS",
+        "name": "Guts",
+        "description": "Boosts Attack if there is a status problem."
+      }
+    ],
+    "hidden_abilities": [
+      {
+        "id": "HUSTLE",
+        "name": "Hustle",
+        "description": "Boosts the Attack stat, but lowers accuracy."
+      }
+    ],
+    "base_stats": [
+      55,
+      81,
+      60,
+      97,
+      50,
+      70
+    ],
+    "base_stats_dict": {
+      "HP": 55,
+      "ATK": 81,
+      "DEF": 60,
+      "SPA": 50,
+      "SPD": 70,
+      "SPE": 97
+    },
+    "base_stat_total": 413,
+    "growth_rate": "Medium",
+    "gender_ratio": "Female50Percent",
+    "gender_ratio_display": "Male: 1/2, Female: 1/2",
+    "evs": [
+      {
+        "stat": "SPEED",
+        "name": "Speed",
+        "amount": 2
+      }
+    ],
+    "ev_yield": [
+      {
+        "stat": "SPEED",
+        "name": "Speed",
+        "amount": 2
+      }
+    ],
+    "ev_yield_text": "2 Speed",
+    "catch_rate": 127,
+    "base_exp": 145,
+    "height": null,
+    "weight": null,
+    "kind": "",
+    "color": "Brown",
+    "shape": "Quadruped",
+    "habitat": "Grassland",
+    "pokedex": "A Raticate's sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.",
+    "locations": [],
+    "moves": {
+      "level_up": [
+        {
+          "level": 0,
+          "id": "SCARYFACE",
+          "name": "Scary Face",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user frightens the target with a scary face to harshly reduce its Speed stat."
+        },
+        {
+          "level": 1,
+          "id": "TACKLE",
+          "name": "Tackle",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 40,
+          "pp": 35,
+          "accuracy": 100,
+          "description": "A physical attack in which the user charges and slams into the target with its whole body."
+        },
+        {
+          "level": 1,
+          "id": "TAILWHIP",
+          "name": "Tail Whip",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 100,
+          "description": "The user wags its tail cutely, making opposing Pokémon less wary and lowering their Defense stat."
+        },
+        {
+          "level": 1,
+          "id": "QUICKATTACK",
+          "name": "Quick Attack",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 40,
+          "pp": 30,
+          "accuracy": 100,
+          "description": "The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first."
+        },
+        {
+          "level": 1,
+          "id": "FOCUSENERGY",
+          "name": "Focus Energy",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user takes a deep breath and focuses so that critical hits land more easily."
+        },
+        {
+          "level": 1,
+          "id": "SWORDSDANCE",
+          "name": "Swords Dance",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "A frenetic dance to uplift the fighting spirit. It sharply raises the user's Attack stat."
+        },
+        {
+          "level": 4,
+          "id": "QUICKATTACK",
+          "name": "Quick Attack",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 40,
+          "pp": 30,
+          "accuracy": 100,
+          "description": "The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first."
+        },
+        {
+          "level": 7,
+          "id": "FOCUSENERGY",
+          "name": "Focus Energy",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user takes a deep breath and focuses so that critical hits land more easily."
+        },
+        {
+          "level": 10,
+          "id": "BITE",
+          "name": "Bite",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The target is bitten with viciously sharp fangs. It may make the target flinch."
+        },
+        {
+          "level": 13,
+          "id": "LASERFOCUS",
+          "name": "Laser Focus",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user focuses intensely. The attack on the next turn always results in a critical hit."
+        },
+        {
+          "level": 16,
+          "id": "TAKEDOWN",
+          "name": "Take Down",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 90,
+          "pp": 20,
+          "accuracy": 85,
+          "description": "A reckless, full-body charge attack for slamming into the foe. It also damages the user a little."
+        },
+        {
+          "level": 19,
+          "id": "ASSURANCE",
+          "name": "Assurance",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "If the target has already taken some damage in the same turn, this attack's power is doubled."
+        },
+        {
+          "level": 24,
+          "id": "CRUNCH",
+          "name": "Crunch",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user crunches up the target with sharp fangs. It may also lower the target's Defense stat."
+        },
+        {
+          "level": 29,
+          "id": "SUCKERPUNCH",
+          "name": "Sucker Punch",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 70,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move enables the user to attack first. It fails if the target is not readying an attack, however."
+        },
+        {
+          "level": 34,
+          "id": "SUPERFANG",
+          "name": "Super Fang",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 10,
+          "accuracy": 90,
+          "description": "The user chomps hard on the target with its sharp front fangs. It cuts the target's HP to half."
+        },
+        {
+          "level": 39,
+          "id": "DOUBLEEDGE",
+          "name": "Double-Edge",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 120,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A reckless, life-risking tackle. It also damages the user by a fairly large amount, however."
+        },
+        {
+          "level": 44,
+          "id": "ENDEAVOR",
+          "name": "Endeavor",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "An attack move that cuts down the target's HP to equal the user's HP."
+        }
+      ],
+      "tutor": [
+        {
+          "id": "ATTRACT",
+          "name": "Attract",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "If it is the opposite gender of the user, the target becomes infatuated and less likely to attack."
+        },
+        {
+          "id": "BLIZZARD",
+          "name": "Blizzard",
+          "type": "ICE",
+          "category": "Special",
+          "power": 110,
+          "pp": 5,
+          "accuracy": 70,
+          "description": "A howling blizzard is summoned to strike the opposing team. It may also freeze them solid."
+        },
+        {
+          "id": "BODYSLAM",
+          "name": "Body Slam",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 85,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user drops onto the target with its full body weight. It may leave the target with paralysis."
+        },
+        {
+          "id": "CAPTIVATE",
+          "name": "Captivate",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "If it is the opposite gender of the user, the target is charmed into harshly lowering its Sp. Atk stat."
+        },
+        {
+          "id": "CHARGEBEAM",
+          "name": "Charge Beam",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 50,
+          "pp": 10,
+          "accuracy": 90,
+          "description": "The user fires a concentrated bundle of electricity. It may also raise the user's Sp. Atk stat."
+        },
+        {
+          "id": "CONFIDE",
+          "name": "Confide",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "The user tells the target a secret. The target loses focus and its Sp. Atk stat is lowered."
+        },
+        {
+          "id": "COUNTER",
+          "name": "Counter",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A retaliation move that counters any physical attack, inflicting double the damage taken."
+        },
+        {
+          "id": "COVET",
+          "name": "Covet",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The user endearingly approaches the target, then steals the target's held item."
+        },
+        {
+          "id": "CUT",
+          "name": "Cut",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 50,
+          "pp": 30,
+          "accuracy": 95,
+          "description": "The target is cut with a scythe or a claw. It can also be used to cut down thin trees."
+        },
+        {
+          "id": "DEFENSECURL",
+          "name": "Defense Curl",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 40,
+          "accuracy": 0,
+          "description": "The user curls up to conceal weak spots and raise its Defense stat."
+        },
+        {
+          "id": "DIG",
+          "name": "Dig",
+          "type": "GROUND",
+          "category": "Physical",
+          "power": 80,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user burrows, then attacks on the second turn. It can also be used to exit dungeons."
+        },
+        {
+          "id": "DOUBLEEDGE",
+          "name": "Double-Edge",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 120,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A reckless, life-risking tackle. It also damages the user by a fairly large amount, however."
+        },
+        {
+          "id": "DOUBLETEAM",
+          "name": "Double Team",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 15,
+          "accuracy": 0,
+          "description": "By moving rapidly, the user makes illusory copies of itself to raise its evasiveness."
+        },
+        {
+          "id": "ENDEAVOR",
+          "name": "Endeavor",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "An attack move that cuts down the target's HP to equal the user's HP."
+        },
+        {
+          "id": "ENDURE",
+          "name": "Endure",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user endures any attack with at least 1 HP. Its chance of failing rises if it is used in succession."
+        },
+        {
+          "id": "FACADE",
+          "name": "Facade",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "An attack move that doubles its power if the user is poisoned, burned, or has paralysis."
+        },
+        {
+          "id": "FRUSTRATION",
+          "name": "Frustration",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A full-power attack that grows more powerful the less the user likes its Trainer."
+        },
+        {
+          "id": "GIGAIMPACT",
+          "name": "Giga Impact",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 150,
+          "pp": 5,
+          "accuracy": 90,
+          "description": "The user charges at the target using every bit of its power. The user must rest on the next turn."
+        },
+        {
+          "id": "GRASSKNOT",
+          "name": "Grass Knot",
+          "type": "GRASS",
+          "category": "Special",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The user snares the target with grass and trips it. The heavier the target, the greater the damage."
+        },
+        {
+          "id": "HEADBUTT",
+          "name": "Headbutt",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user sticks out its head and attacks by charging into the foe. It may also make the target flinch."
+        },
+        {
+          "id": "HIDDENPOWER",
+          "name": "Hidden Power",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 60,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A unique attack that varies in type and intensity depending on the Pokémon using it."
+        },
+        {
+          "id": "HYPERBEAM",
+          "name": "Hyper Beam",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 150,
+          "pp": 5,
+          "accuracy": 90,
+          "description": "The foe is attacked with a powerful beam. The user must rest on the next turn to regain its energy."
+        },
+        {
+          "id": "ICEBEAM",
+          "name": "Ice Beam",
+          "type": "ICE",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The target is struck with an icy-cold beam of energy. It may also freeze the target solid."
+        },
+        {
+          "id": "ICYWIND",
+          "name": "Icy Wind",
+          "type": "ICE",
+          "category": "Special",
+          "power": 55,
+          "pp": 15,
+          "accuracy": 95,
+          "description": "The user attacks with a gust of chilled air. It also lowers the targets' Speed stat."
+        },
+        {
+          "id": "IRONTAIL",
+          "name": "Iron Tail",
+          "type": "STEEL",
+          "category": "Physical",
+          "power": 100,
+          "pp": 15,
+          "accuracy": 75,
+          "description": "The target is slammed with a steel-hard tail. It may also lower the target's Defense stat."
+        },
+        {
+          "id": "LASTRESORT",
+          "name": "Last Resort",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 140,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move can be used only after the user has used all the other moves it knows in the battle."
+        },
+        {
+          "id": "MIMIC",
+          "name": "Mimic",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user copies the move last used by the foe. The move can be used until the user is switched out."
+        },
+        {
+          "id": "MUDSLAP",
+          "name": "Mud-Slap",
+          "type": "GROUND",
+          "category": "Special",
+          "power": 20,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user hurls mud in the target's face to inflict damage and lower its accuracy."
+        },
+        {
+          "id": "NATURALGIFT",
+          "name": "Natural Gift",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user draws power to attack by using its held Berry. The Berry determines its type and power."
+        },
+        {
+          "id": "PLUCK",
+          "name": "Pluck",
+          "type": "FLYING",
+          "category": "Physical",
+          "power": 60,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The user pecks the target. If the target is holding a Berry, the user eats it and gains its effect."
+        },
+        {
+          "id": "PROTECT",
+          "name": "Protect",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "It enables the user to evade all attacks. Its chance of failing rises if it is used in succession."
+        },
+        {
+          "id": "RAINDANCE",
+          "name": "Rain Dance",
+          "type": "WATER",
+          "category": "Status",
+          "power": null,
+          "pp": 5,
+          "accuracy": 0,
+          "description": "The user summons a heavy rain that falls for five turns, powering up Water-type moves."
+        },
+        {
+          "id": "REST",
+          "name": "Rest",
+          "type": "PSYCHIC",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user goes to sleep for two turns. It fully restores the user's HP and heals any status problem."
+        },
+        {
+          "id": "RETALIATE",
+          "name": "Retaliate",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "Gets revenge for a fainted ally. If an ally fainted in the last turn, this attack's damage increases."
+        },
+        {
+          "id": "RETURN",
+          "name": "Return",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "A full-power attack that grows more powerful the more the user likes its Trainer."
+        },
+        {
+          "id": "ROAR",
+          "name": "Roar",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "The target is scared off and replaced by another Pokémon in its party. In the wild, the battle ends."
+        },
+        {
+          "id": "ROCKSMASH",
+          "name": "Rock Smash",
+          "type": "FIGHTING",
+          "category": "Physical",
+          "power": 40,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user attacks with a punch that can shatter a rock. It may also lower the foe's Defense stat."
+        },
+        {
+          "id": "ROUND",
+          "name": "Round",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 60,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user attacks with a song. Others can join in the Round and make the attack do greater damage."
+        },
+        {
+          "id": "SECRETPOWER",
+          "name": "Secret Power",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 70,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The user attacks with a secret power. Its added effects vary depending on the user's environment."
+        },
+        {
+          "id": "SHADOWBALL",
+          "name": "Shadow Ball",
+          "type": "GHOST",
+          "category": "Special",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user hurls a shadowy blob at the target. It may also lower the target's Sp. Def stat."
+        },
+        {
+          "id": "SHOCKWAVE",
+          "name": "Shock Wave",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 60,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "The user strikes the target with a quick jolt of electricity. This attack cannot be evaded."
+        },
+        {
+          "id": "SLEEPTALK",
+          "name": "Sleep Talk",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "While it is asleep, the user randomly uses one of the moves it knows."
+        },
+        {
+          "id": "SLUDGEBOMB",
+          "name": "Sludge Bomb",
+          "type": "POISON",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "Unsanitary sludge is hurled at the target. It may also poison the target."
+        },
+        {
+          "id": "SNORE",
+          "name": "Snore",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 50,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "An attack that can be used only if the user is asleep. The harsh noise may also make the target flinch."
+        },
+        {
+          "id": "STOMPINGTANTRUM",
+          "name": "Stomping Tantrum",
+          "type": "GROUND",
+          "category": "Physical",
+          "power": 75,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user attacks driven by frustration. Power increases if the user's previous move failed."
+        },
+        {
+          "id": "STRENGTH",
+          "name": "Strength",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The target is slugged with a punch thrown at maximum power. It can also be used to move heavy boulders."
+        },
+        {
+          "id": "SUBSTITUTE",
+          "name": "Substitute",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "The user makes a copy of itself using some of its HP. The copy serves as the user's decoy."
+        },
+        {
+          "id": "SUCKERPUNCH",
+          "name": "Sucker Punch",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 70,
+          "pp": 5,
+          "accuracy": 100,
+          "description": "This move enables the user to attack first. It fails if the target is not readying an attack, however."
+        },
+        {
+          "id": "SUNNYDAY",
+          "name": "Sunny Day",
+          "type": "FIRE",
+          "category": "Status",
+          "power": null,
+          "pp": 5,
+          "accuracy": 0,
+          "description": "The user intensifies the sun for five turns, powering up Fire-type moves."
+        },
+        {
+          "id": "SUPERFANG",
+          "name": "Super Fang",
+          "type": "NORMAL",
+          "category": "Physical",
+          "power": 1,
+          "pp": 10,
+          "accuracy": 90,
+          "description": "The user chomps hard on the target with its sharp front fangs. It cuts the target's HP to half."
+        },
+        {
+          "id": "SWAGGER",
+          "name": "Swagger",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 15,
+          "accuracy": 85,
+          "description": "The user enrages and confuses the target. However, it also sharply raises the target's Attack stat."
+        },
+        {
+          "id": "SWIFT",
+          "name": "Swift",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 60,
+          "pp": 20,
+          "accuracy": 0,
+          "description": "Star-shaped rays are shot at the opposing team. This attack never misses."
+        },
+        {
+          "id": "SWORDSDANCE",
+          "name": "Swords Dance",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 10,
+          "accuracy": 0,
+          "description": "A frenetic dance to uplift the fighting spirit. It sharply raises the user's Attack stat."
+        },
+        {
+          "id": "TAUNT",
+          "name": "Taunt",
+          "type": "DARK",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 100,
+          "description": "The target is taunted into a rage that allows it to use only attack moves for three turns."
+        },
+        {
+          "id": "THIEF",
+          "name": "Thief",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 60,
+          "pp": 25,
+          "accuracy": 100,
+          "description": "The user attacks and steals the foe's held item simultaneously. It can't steal if the user holds an item."
+        },
+        {
+          "id": "THROATCHOP",
+          "name": "Throat Chop",
+          "type": "DARK",
+          "category": "Physical",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user attacks the target's throat. The target cannot use sound-based moves for two turns."
+        },
+        {
+          "id": "THUNDER",
+          "name": "Thunder",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 110,
+          "pp": 10,
+          "accuracy": 70,
+          "description": "A wicked thunderbolt is dropped on the foe to inflict damage. It may also leave the target paralyzed."
+        },
+        {
+          "id": "THUNDERBOLT",
+          "name": "Thunderbolt",
+          "type": "ELECTRIC",
+          "category": "Special",
+          "power": 90,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "A strong electric blast is loosed at the target. It may also leave the target with paralysis."
+        },
+        {
+          "id": "THUNDERWAVE",
+          "name": "Thunder Wave",
+          "type": "ELECTRIC",
+          "category": "Status",
+          "power": null,
+          "pp": 20,
+          "accuracy": 90,
+          "description": "A weak electric charge is launched at the target. It causes paralysis if it hits."
+        },
+        {
+          "id": "UPROAR",
+          "name": "Uproar",
+          "type": "NORMAL",
+          "category": "Special",
+          "power": 90,
+          "pp": 10,
+          "accuracy": 100,
+          "description": "The user attacks in an uproar for three turns. Over that time, no one can fall asleep."
+        },
+        {
+          "id": "WILDCHARGE",
+          "name": "Wild Charge",
+          "type": "ELECTRIC",
+          "category": "Physical",
+          "power": 90,
+          "pp": 15,
+          "accuracy": 100,
+          "description": "The user shrouds itself in electricity and smashes into its foe. It also damages the user a little."
+        },
+        {
+          "id": "WORKUP",
+          "name": "Work Up",
+          "type": "NORMAL",
+          "category": "Status",
+          "power": null,
+          "pp": 30,
+          "accuracy": 0,
+          "description": "The user is roused, and its Attack and Sp. Atk stats increase."
+        },
+        {
+          "id": "ZENHEADBUTT",
+          "name": "Zen Headbutt",
+          "type": "PSYCHIC",
+          "category": "Physical",
+          "power": 80,
+          "pp": 15,
+          "accuracy": 90,
+          "description": "The user focuses its willpower to its head and attacks the foe. It may also make the target flinch."
+        }
+      ],
+      "egg": []
+    },
+    "evolution": {
+      "next": [],
+      "final": []
+    },
+    "sprites": {
+      "regular": "images/pokemon/RATICATE.png",
+      "shiny": "images/pokemon-shiny/RATICATE.png"
+    },
+    "forms": []
+  }
+]
