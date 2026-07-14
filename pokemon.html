@@ -683,7 +683,7 @@
         <div class="control-group" style="flex: 1.5;">
           <label>Dex View</label>
           <div class="view-toggle">
-            <button class="view-btn active" data-view="azori" type="button">Ziona Pokédex</button>
+            <button class="view-btn active" data-view="Ziona" type="button">Ziona Pokédex</button>
             <button class="view-btn" data-view="national" type="button">National Dex</button>
           </div>
         </div>
@@ -787,7 +787,7 @@
   const DISPLAY_STAT_LABELS = ["HP", "ATK", "DEF", "SPA", "SPD", "SPE"];
 
   let allPokemon = [];
-  let currentView = "azori";
+  let currentView = "Ziona";
   let modalShinyState = false;
   let modalFamily = [];
   let modalSelectedPokemonId = null;
@@ -901,9 +901,9 @@
     return Number(pokemon.generation) === 10;
   }
 
-  function isAzorianForm(pokemon) {
+  function isZionanForm(pokemon) {
     const text = `${pokemon.form_name || ""} ${pokemon.name || ""}`.toLowerCase();
-    return Number(pokemon.form_number || 0) > 0 && text.includes("azorian");
+    return Number(pokemon.form_number || 0) > 0 && text.includes("Zionan");
   }
 
   function isRegionalVariantPokemon(pokemon) {
@@ -912,7 +912,7 @@
     return (
       Number(pokemon.form_number || 0) > 0 &&
       (
-        text.includes("azorian") ||
+        text.includes("Zionan") ||
         text.includes("alolan") ||
         text.includes("galarian") ||
         text.includes("hisuian") ||
@@ -925,11 +925,11 @@
     return isRegionalVariantPokemon(pokemon);
   }
 
-  function hasAzorianReplacement(pokemon) {
+  function hasZionanReplacement(pokemon) {
     return allPokemon.some(other =>
       other.species_id === pokemon.species_id &&
       other.id !== pokemon.id &&
-      isAzorianForm(other) &&
+      isZionanForm(other) &&
       other.regional_dex_number !== "" &&
       other.regional_dex_number != null
     );
@@ -939,7 +939,7 @@
     return pokemon.national_dex_number !== "" && pokemon.national_dex_number != null;
   }
 
-  function isInAzoriDex(pokemon) {
+  function isInZionaDex(pokemon) {
     const inRegionalDex =
       pokemon.regional_dex_number !== "" &&
       pokemon.regional_dex_number !== null &&
@@ -948,17 +948,17 @@
     if (!inRegionalDex) return false;
 
     const isRegionalVariant = isRegionalVariantPokemon(pokemon);
-    const isAzorian = isAzorianForm(pokemon);
+    const isZionan = isZionanForm(pokemon);
 
     if (Number(pokemon.form_number || 0) > 0 && !isRegionalVariant) {
       return false;
     }
 
-    if (Number(pokemon.form_number || 0) > 0 && !isAzorian) {
+    if (Number(pokemon.form_number || 0) > 0 && !isZionan) {
       return false;
     }
 
-    if (Number(pokemon.form_number || 0) === 0 && hasAzorianReplacement(pokemon)) {
+    if (Number(pokemon.form_number || 0) === 0 && hasZionanReplacement(pokemon)) {
       return false;
     }
 
@@ -979,7 +979,7 @@
   }
 
   function getDexText(pokemon) {
-    const regional = pokemon.regional_dex_number !== "" ? `Azori Dex: ${pokemon.regional_dex_number}` : "Azori Dex: —";
+    const regional = pokemon.regional_dex_number !== "" ? `Ziona Dex: ${pokemon.regional_dex_number}` : "Ziona Dex: —";
     const national = pokemon.national_dex_number !== "" ? `National Dex: ${pokemon.national_dex_number}` : "National Dex: —";
     return `${regional} | ${national}`;
   }
@@ -1009,7 +1009,7 @@
         return -getDisplayStat(pokemon, "SPE");
       case "dex":
       default:
-        if (currentView === "azori") {
+        if (currentView === "Ziona") {
           return pokemon.regional_dex_number === "" ? 999999 : Number(pokemon.regional_dex_number);
         }
         return pokemon.national_dex_number === "" ? 999999 : Number(pokemon.national_dex_number);
@@ -1039,7 +1039,7 @@
   }
 
   function inCurrentDex(pokemon) {
-    return currentView === "azori" ? isInAzoriDex(pokemon) : isInNationalDex(pokemon);
+    return currentView === "Ziona" ? isInZionaDex(pokemon) : isInNationalDex(pokemon);
   }
 
   function matchesCurrentFilter(pokemon) {
