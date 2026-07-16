@@ -119,23 +119,23 @@ void printPokemonDocData(struct PokemonDocData monData)
     for(u8 i = 0; i < monData.numLevelUpMoves; i++)
     {
         if(i > 0) printf(",\n");
-        printf("\t\t{\n");
-        printf("\t\t\t\"level\": %d,\n", monData.level_up_moves[i].level);
-        printf("\t\t\t\"id\": \"%s\",\n", monData.level_up_moves[i].id);
-        printf("\t\t\t\"name\": \"%s\",\n", monData.level_up_moves[i].name);
-        printf("\t\t\t\"type\": \"%s\",\n", monData.level_up_moves[i].type);
-        printf("\t\t\t\"category\": \"%s\",\n", monData.level_up_moves[i].category);
+        printf("\t\t\t{\n");
+        printf("\t\t\t\t\"level\": %d,\n", monData.level_up_moves[i].level);
+        printf("\t\t\t\t\"id\": \"%s\",\n", monData.level_up_moves[i].id);
+        printf("\t\t\t\t\"name\": \"%s\",\n", monData.level_up_moves[i].name);
+        printf("\t\t\t\t\"type\": \"%s\",\n", monData.level_up_moves[i].type);
+        printf("\t\t\t\t\"category\": \"%s\",\n", monData.level_up_moves[i].category);
         if(monData.level_up_moves[i].power == 0)
         {
-            printf("\t\t\t\"power\": null,\n");
+            printf("\t\t\t\t\"power\": null,\n");
         } else
         {
-            printf("\t\t\t\"power\": %d,\n", monData.level_up_moves[i].power);
+            printf("\t\t\t\t\"power\": %d,\n", monData.level_up_moves[i].power);
         }
-        printf("\t\t\t\"pp\": %d,\n", monData.level_up_moves[i].pp);
-        printf("\t\t\t\"accuracy\": %d,\n", monData.level_up_moves[i].accuracy);
-        printf("\t\t\t\"description\": \"%s\",\n", monData.level_up_moves[i].description);
-        printf("\t\t}");
+        printf("\t\t\t\t\"pp\": %d,\n", monData.level_up_moves[i].pp);
+        printf("\t\t\t\t\"accuracy\": %d,\n", monData.level_up_moves[i].accuracy);
+        printf("\t\t\t\t\"description\": \"%s\",\n", monData.level_up_moves[i].description);
+        printf("\t\t\t}");
     }
     printf("\n");
     printf("\t\t]\n");
@@ -154,6 +154,7 @@ struct PokemonDocData gPokemonDocs[NUM_SPECIES] = {0};
 
 int main()
 {
+    printf("[\n");
     for(u16 i = 0; i < NUM_SPECIES; i++)
     {
         strcpy(gPokemonDocs[i].id, gSpeciesNames[i]);
@@ -200,9 +201,9 @@ int main()
             gPokemonDocs[i].level_up_moves[j].description = gMoveDescriptionPointers[gPokemonDocs[i].level_up_moves[j].num - 1];
         }
         
-
         printPokemonDocData(gPokemonDocs[i]);
     }
+    printf("]\n");
 
     return 0;
 }
