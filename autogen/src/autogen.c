@@ -134,7 +134,7 @@ void printPokemonDocData(struct PokemonDocData monData)
         }
         printf("\t\t\t\t\"pp\": %d,\n", monData.level_up_moves[i].pp);
         printf("\t\t\t\t\"accuracy\": %d,\n", monData.level_up_moves[i].accuracy);
-        printf("\t\t\t\t\"description\": \"%s\",\n", monData.level_up_moves[i].description);
+        printf("\t\t\t\t\"description\": \"%s\"\n", monData.level_up_moves[i].description);
         printf("\t\t\t}");
     }
     printf("\n");
