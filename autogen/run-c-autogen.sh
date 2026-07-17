@@ -13,5 +13,9 @@ if [ $? -ne 0 ]; then
 fi
 
 if [ ${AUTORUN} ]; then
-    ./${OUTPUT_DIR}/${APP_NAME} > ${OUTPUT_DIR}/${RECORDED_OUTPUT_FILE}
+    if [ ${REDIRECT_OUTPUT} ]; then
+        ./${OUTPUT_DIR}/${APP_NAME} > ${OUTPUT_DIR}/${RECORDED_OUTPUT_FILE}
+    else
+        ./${OUTPUT_DIR}/${APP_NAME}
+    fi
 fi

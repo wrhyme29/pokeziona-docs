@@ -1594,6 +1594,17 @@
         </div>
 
         ${
+          safeArray(selectedPokemon.moves?.tmhm).length
+            ? `
+              <div class="detail-card full">
+                <h3>TM/HM Moves</h3>
+                ${renderMoveTable(selectedPokemon.moves.tmhm, false)}
+              </div>
+            `
+            : ""
+        }
+
+        ${
           safeArray(selectedPokemon.moves?.tutor).length
             ? `
               <div class="detail-card full">

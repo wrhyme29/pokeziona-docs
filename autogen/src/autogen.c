@@ -14,6 +14,9 @@
 #include "include/level_up_learnset_pointers.h"
 #include "include/battle_moves.h"
 #include "include/move_descriptions.h"
+#include "include/egg_moves.h"
+#include "include/tutor_learnsets.h"
+#include "include/tmhm_learnsets.h"
 
 struct PokemonDocDataAbility
 {
@@ -55,6 +58,12 @@ struct PokemonDocData
     u8 baseSpDefense;
     struct PokemonDocDataMove level_up_moves[MAX_LEVEL_UP_MOVES];
     u8 numLevelUpMoves;
+    struct PokemonDocDataMove tmhm_moves[NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES];
+    u8 numTmHmMoves;
+    struct PokemonDocDataMove tutor_moves[TUTOR_MOVE_COUNT];
+    u8 numTutorMoves;
+    struct PokemonDocDataMove egg_moves[EGG_MOVES_ARRAY_COUNT];
+    u8 numEggMoves;
 };
 
 void printPokemonDocData(struct PokemonDocData monData)
@@ -84,7 +93,7 @@ void printPokemonDocData(struct PokemonDocData monData)
         printf("\t\t{\n");
         printf("\t\t\t\"id\": \"%s\",\n", monData.abilities[i].id);
         printf("\t\t\t\"name\": \"%s\",\n", monData.abilities[i].name);
-        printf("\t\t\t\"description\": \"%s\",\n", monData.abilities[i].description);
+        printf("\t\t\t\"description\": \"%s\"\n", monData.abilities[i].description);
         printf("\t\t}");
     }
     printf("\n");
@@ -138,14 +147,77 @@ void printPokemonDocData(struct PokemonDocData monData)
         printf("\t\t\t}");
     }
     printf("\n");
+    printf("\t\t],\n");
+    printf("\t\t\"tmhm\": [\n");
+    for(u8 i = 0; i < monData.numTmHmMoves; i++)
+    {
+        if(i > 0) printf(",\n");
+        printf("\t\t\t{\n");
+        printf("\t\t\t\t\"id\": \"%s\",\n", monData.tmhm_moves[i].id);
+        printf("\t\t\t\t\"name\": \"%s\",\n", monData.tmhm_moves[i].name);
+        printf("\t\t\t\t\"type\": \"%s\",\n", monData.tmhm_moves[i].type);
+        printf("\t\t\t\t\"category\": \"%s\",\n", monData.tmhm_moves[i].category);
+        if(monData.tmhm_moves[i].power == 0)
+        {
+            printf("\t\t\t\t\"power\": null,\n");
+        } else
+        {
+            printf("\t\t\t\t\"power\": %d,\n", monData.tmhm_moves[i].power);
+        }
+        printf("\t\t\t\t\"pp\": %d,\n", monData.tmhm_moves[i].pp);
+        printf("\t\t\t\t\"accuracy\": %d,\n", monData.tmhm_moves[i].accuracy);
+        printf("\t\t\t\t\"description\": \"%s\"\n", monData.tmhm_moves[i].description);
+        printf("\t\t\t}");
+    }
+    printf("\n");
+    printf("\t\t],\n");
+    printf("\t\t\"tutor\": [\n");
+    for(u8 i = 0; i < monData.numTutorMoves; i++)
+    {
+        if(i > 0) printf(",\n");
+        printf("\t\t\t{\n");
+        printf("\t\t\t\t\"id\": \"%s\",\n", monData.tutor_moves[i].id);
+        printf("\t\t\t\t\"name\": \"%s\",\n", monData.tutor_moves[i].name);
+        printf("\t\t\t\t\"type\": \"%s\",\n", monData.tutor_moves[i].type);
+        printf("\t\t\t\t\"category\": \"%s\",\n", monData.tutor_moves[i].category);
+        if(monData.tutor_moves[i].power == 0)
+        {
+            printf("\t\t\t\t\"power\": null,\n");
+        } else
+        {
+            printf("\t\t\t\t\"power\": %d,\n", monData.tutor_moves[i].power);
+        }
+        printf("\t\t\t\t\"pp\": %d,\n", monData.tutor_moves[i].pp);
+        printf("\t\t\t\t\"accuracy\": %d,\n", monData.tutor_moves[i].accuracy);
+        printf("\t\t\t\t\"description\": \"%s\"\n", monData.tutor_moves[i].description);
+        printf("\t\t\t}");
+    }
+    printf("\n");
+    printf("\t\t],\n");
+    printf("\t\t\"egg\": [\n");
+    for(u8 i = 0; i < monData.numEggMoves; i++)
+    {
+        if(i > 0) printf(",\n");
+        printf("\t\t\t{\n");
+        printf("\t\t\t\t\"id\": \"%s\",\n", monData.egg_moves[i].id);
+        printf("\t\t\t\t\"name\": \"%s\",\n", monData.egg_moves[i].name);
+        printf("\t\t\t\t\"type\": \"%s\",\n", monData.egg_moves[i].type);
+        printf("\t\t\t\t\"category\": \"%s\",\n", monData.egg_moves[i].category);
+        if(monData.egg_moves[i].power == 0)
+        {
+            printf("\t\t\t\t\"power\": null,\n");
+        } else
+        {
+            printf("\t\t\t\t\"power\": %d,\n", monData.egg_moves[i].power);
+        }
+        printf("\t\t\t\t\"pp\": %d,\n", monData.egg_moves[i].pp);
+        printf("\t\t\t\t\"accuracy\": %d,\n", monData.egg_moves[i].accuracy);
+        printf("\t\t\t\t\"description\": \"%s\"\n", monData.egg_moves[i].description);
+        printf("\t\t\t}");
+    }
+    printf("\n");
     printf("\t\t]\n");
-
     printf("\t}\n");
-
-
-
-
-
     printf("},\n");
 }
 
@@ -200,7 +272,69 @@ int main()
             gPokemonDocs[i].level_up_moves[j].accuracy = gBattleMoves[gPokemonDocs[i].level_up_moves[j].num].accuracy;
             gPokemonDocs[i].level_up_moves[j].description = gMoveDescriptionPointers[gPokemonDocs[i].level_up_moves[j].num - 1];
         }
-        
+
+        gPokemonDocs[i].numTmHmMoves = 0;
+        for(u8 j = 0; j < NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES; j++)
+        {
+            if(!(canSpeciesLearnTMHM(i, j))) continue;
+
+            gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num = sTMHMMoves[j];
+            strcpy(gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].id, gMoveNames[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num]);
+            strcpy(gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].name, gMoveNames[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num]);
+            capitalizeString(gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].name);
+            strcpy(gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].type, gTypeNames[gBattleMoves[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num].type]);
+            strcpy(gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].category, gCategoryNames[gBattleMoves[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num].category]);
+            capitalizeString(gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].category);
+            gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].power = gBattleMoves[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num].power;
+            gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].pp = gBattleMoves[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num].pp;
+            gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].accuracy = gBattleMoves[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num].accuracy;
+            gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].description = gMoveDescriptionPointers[gPokemonDocs[i].tmhm_moves[gPokemonDocs[i].numTmHmMoves].num - 1];
+
+            gPokemonDocs[i].numTmHmMoves++;
+        }
+
+
+        gPokemonDocs[i].numTutorMoves = 0;
+        for(u8 j = 0; j < TUTOR_MOVE_COUNT; j++)
+        {
+            if(!(sTutorLearnsets[i] & (1 << j))) continue;
+
+            gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num = gTutorMoves[j];
+            strcpy(gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].id, gMoveNames[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num]);
+            strcpy(gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].name, gMoveNames[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num]);
+            capitalizeString(gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].name);
+            strcpy(gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].type, gTypeNames[gBattleMoves[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num].type]);
+            strcpy(gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].category, gCategoryNames[gBattleMoves[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num].category]);
+            capitalizeString(gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].category);
+            gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].power = gBattleMoves[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num].power;
+            gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].pp = gBattleMoves[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num].pp;
+            gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].accuracy = gBattleMoves[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num].accuracy;
+            gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].description = gMoveDescriptionPointers[gPokemonDocs[i].tutor_moves[gPokemonDocs[i].numTutorMoves].num - 1];
+
+            gPokemonDocs[i].numTutorMoves++;
+        }
+
+        gPokemonDocs[i].numEggMoves = 0;
+        u16 eggMoveIdx = speciesToEggSpeciesIndex(i);
+        for (u8 j = 0; j < EGG_MOVES_ARRAY_COUNT; j++)
+        {
+            if (gEggMoves[eggMoveIdx + j] > EGG_MOVES_SPECIES_OFFSET)
+                break;
+
+            gPokemonDocs[i].numEggMoves++;
+            gPokemonDocs[i].egg_moves[j].num = gEggMoves[eggMoveIdx + j];
+            strcpy(gPokemonDocs[i].egg_moves[j].id, gMoveNames[gPokemonDocs[i].egg_moves[j].num]);
+            strcpy(gPokemonDocs[i].egg_moves[j].name, gMoveNames[gPokemonDocs[i].egg_moves[j].num]);
+            capitalizeString(gPokemonDocs[i].egg_moves[j].name);
+            strcpy(gPokemonDocs[i].egg_moves[j].type, gTypeNames[gBattleMoves[gPokemonDocs[i].egg_moves[j].num].type]);
+            strcpy(gPokemonDocs[i].egg_moves[j].category, gCategoryNames[gBattleMoves[gPokemonDocs[i].egg_moves[j].num].category]);
+            capitalizeString(gPokemonDocs[i].egg_moves[j].category);
+            gPokemonDocs[i].egg_moves[j].power = gBattleMoves[gPokemonDocs[i].egg_moves[j].num].power;
+            gPokemonDocs[i].egg_moves[j].pp = gBattleMoves[gPokemonDocs[i].egg_moves[j].num].pp;
+            gPokemonDocs[i].egg_moves[j].accuracy = gBattleMoves[gPokemonDocs[i].egg_moves[j].num].accuracy;
+            gPokemonDocs[i].egg_moves[j].description = gMoveDescriptionPointers[gPokemonDocs[i].egg_moves[j].num - 1];
+        }
+
         printPokemonDocData(gPokemonDocs[i]);
     }
     printf("]\n");

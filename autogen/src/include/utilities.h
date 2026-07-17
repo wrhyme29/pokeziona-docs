@@ -9,6 +9,9 @@
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) >= (b) ? (a) : (b))
 #define _(x)        {x}
+#define ARRAY_COUNT(array) (size_t)(sizeof(array) / sizeof((array)[0]))
+#define CAT(a, b) CAT_(a, b)
+#define CAT_(a, b) a ## b
 
 void capitalizeString(u8* str)
 {
@@ -21,7 +24,7 @@ void capitalizeString(u8* str)
         {
             capNext = FALSE;
         }
-        if (isspace(str[i])) capNext = TRUE;
+        if (isspace(str[i]) || str[i] == '-') capNext = TRUE;
     }
 }
 

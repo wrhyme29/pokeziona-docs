@@ -1,3 +1,8 @@
+#ifndef GUARD_TUTOR_LEARNSETS_H
+#define GUARD_TUTOR_LEARNSETS_H
+
+#include "constants/moves.h"
+
 const u16 gTutorMoves[TUTOR_MOVE_COUNT] =
 {
     [TUTOR_MOVE_MEGA_PUNCH] = MOVE_MEGA_PUNCH,
@@ -5749,3 +5754,4 @@ static const u32 sTutorLearnsets[] =
 
 };
 
+#endif //GUARD_TUTOR_LEARNSETS_H

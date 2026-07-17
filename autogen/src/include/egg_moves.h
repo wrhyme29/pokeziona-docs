@@ -1,6 +1,11 @@
+#ifndef GUARD_EGG_MOVES_H
+#define GUARD_EGG_MOVES_H
+
 #define EGG_MOVES_SPECIES_OFFSET 20000
 #define EGG_MOVES_TERMINATOR 0xFFFF
 #define egg_moves(species, moves...) (SPECIES_##species + EGG_MOVES_SPECIES_OFFSET), moves
+#define EGG_MOVES_ARRAY_COUNT           10
+#define EGG_LVL_UP_MOVES_ARRAY_COUNT    (MAX_LEVEL_UP_MOVES > 50 ? MAX_LEVEL_UP_MOVES : 50)
 
 const u16 gEggMoves[] = {
     egg_moves(BULBASAUR,
@@ -1308,3 +1313,16 @@ const u16 gEggMoves[] = {
 
     EGG_MOVES_TERMINATOR
 };
+
+u16 speciesToEggSpeciesIndex(u16 species)
+{
+     for (u16 i = 0; i < ARRAY_COUNT(gEggMoves) - 1; i++)
+    {
+        if (gEggMoves[i] == species + EGG_MOVES_SPECIES_OFFSET)
+        {
+            return i + 1;
+        }
+    }
+}
+
+#endif // GUARD_EGG_MOVES_H

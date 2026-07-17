@@ -1,3 +1,9 @@
+#ifndef GUARD_TMHM_LEARNSETS_H
+#define GUARD_TMHM_LEARNSETS_H
+
+#include "constants/tms_hms.h"
+#include "utilities.h"
+
 /* Expands to:
  * struct TMHMLearnset
  * {
@@ -12,6 +18,21 @@ struct TMHMLearnset
     FOREACH_TMHM(TMHM_LEARN)
 };
 #undef TMHM_LEARN
+
+/* Expands to:
+ * static const u16 sTMHMMoves[] =
+ * {
+ *     MOVE_FOCUS_PUNCH,
+ *     ...
+ *     MOVE_CUT,
+ *     ...
+ * }; */
+#define TMHM_MOVE(id) CAT(MOVE_, id),
+static const u16 sTMHMMoves[] =
+{
+    FOREACH_TMHM(TMHM_MOVE)
+};
+#undef TMHM_MOVE
 
 const union {
     struct TMHMLearnset learnset;
@@ -10181,3 +10202,33 @@ const union {
     } },
 
 };
+
+u32 canSpeciesLearnTMHM(u16 species, u8 tm)
+{
+    if (species == SPECIES_EGG)
+    {
+        return 0;
+    }
+    // Fewer than 64 moves, use GF's method (for matching).
+    if (sizeof(struct TMHMLearnset) <= 8)
+    {
+        if (tm < 32)
+        {
+            u32 mask = 1 << tm;
+            return gTMHMLearnsets[species].as_u32s[0] & mask;
+        }
+        else
+        {
+            u32 mask = 1 << (tm - 32);
+            return gTMHMLearnsets[species].as_u32s[1] & mask;
+        }
+    }
+    else
+    {
+        u32 index = tm / 32;
+        u32 mask = 1 << (tm % 32);
+        return gTMHMLearnsets[species].as_u32s[index] & mask;
+    }
+}
+
+#endif // GUARD_TMHM_LEARNSETS_H
