@@ -764,8 +764,7 @@ static const u8 sStockpileDescription[] = _(
     "Charges up power for up to 3 turns.");
 
 static const u8 sSpitUpDescription[] = _(
-    "Releases stockpiled power\n"
-    "(the more the better).");
+    "Releases stockpiled power (the more the better).");
 
 static const u8 sSwallowDescription[] = _(
     "Absorbs stockpiled power and restores HP.");

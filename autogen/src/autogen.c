@@ -24,7 +24,7 @@ struct PokemonDocDataAbility
     u8 id[ABILITY_NAME_LENGTH + 1];
     u8 name[ABILITY_NAME_LENGTH + 1];
     u8 *description;
-    u8 num;
+    u16 num;
 };
 
 struct PokemonDocDataEvolution
@@ -47,7 +47,7 @@ struct PokemonDocDataMove
     u8 pp;
     u8 accuracy;
     u8 *description;
-    u8 num;
+    u16 num;
 };
 
 struct PokemonDocData
@@ -264,6 +264,8 @@ int main()
     printf("[\n");
     for(u16 i = 0; i < NUM_SPECIES; i++)
     {
+        if(i == SPECIES_NONE) continue;
+
         strcpy(gPokemonDocs[i].id, gSpeciesNames[i]);
         strcpy(gPokemonDocs[i].species_id, gSpeciesNames[i]);
         strcpy(gPokemonDocs[i].name, gSpeciesNames[i]);
