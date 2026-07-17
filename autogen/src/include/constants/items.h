@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_ITEMS_H
 #define GUARD_CONSTANTS_ITEMS_H
 
+#define ITEM_NAME_LENGTH 14
+
 #define ITEM_NONE 0
 
 // Balls

@@ -236,6 +236,7 @@
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
 
 // Evolution types
+#define EVO_NONE             0  // Pokémon does not evolve
 #define EVO_FRIENDSHIP       1  // Pokémon levels up with friendship ≥ 220
 #define EVO_FRIENDSHIP_DAY   2  // Pokémon levels up during the day with friendship ≥ 220
 #define EVO_FRIENDSHIP_NIGHT 3  // Pokémon levels up at night with friendship ≥ 220
@@ -252,6 +253,9 @@
 #define EVO_LEVEL_SHEDINJA   14 // Pokémon reaches the specified level (special value for Shedinja)
 #define EVO_BEAUTY           15 // Pokémon levels up with beauty ≥ specified value
 #define EVO_RENAME           16 // Pokémon is renamed = specified value
+#define EVO_METHOD_COUNT     17 // Count of types of evolution methods 
+#define EVO_LENGTH           16 // Length of the name of evolution methods
+
 
 #define EVOS_PER_MON 5
 
@@ -261,6 +265,7 @@
 #define EVO_MODE_ITEM_USE   2
 #define EVO_MODE_ITEM_CHECK 3 // If an Everstone is being held, still want to show that the stone *could* be used on that Pokémon to evolve
 #define EVO_MODE_RENAME     4
+
 
 #define MON_PIC_WIDTH 64
 #define MON_PIC_HEIGHT 64

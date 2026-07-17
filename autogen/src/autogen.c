@@ -17,6 +17,7 @@
 #include "include/egg_moves.h"
 #include "include/tutor_learnsets.h"
 #include "include/tmhm_learnsets.h"
+#include "include/evolution.h"
 
 struct PokemonDocDataAbility
 {
@@ -24,6 +25,15 @@ struct PokemonDocDataAbility
     u8 name[ABILITY_NAME_LENGTH + 1];
     u8 *description;
     u8 num;
+};
+
+struct PokemonDocDataEvolution
+{
+    u8 species_id[POKEMON_NAME_LENGTH + 1];
+    u8 name[POKEMON_NAME_LENGTH + 1];
+    u8 method[EVO_LENGTH + 1];
+    u8 parameter[ITEM_NAME_LENGTH + 1];
+    u16 num;
 };
 
 struct PokemonDocDataMove
@@ -64,6 +74,10 @@ struct PokemonDocData
     u8 numTutorMoves;
     struct PokemonDocDataMove egg_moves[EGG_MOVES_ARRAY_COUNT];
     u8 numEggMoves;
+    struct PokemonDocDataEvolution next_evolutions[EVOS_PER_MON];
+    u8 numNextEvolutions;
+    struct PokemonDocDataEvolution final_evolutions[EVOS_PER_MON];
+    u8 numFinalEvolutions;
 };
 
 void printPokemonDocData(struct PokemonDocData monData)
@@ -217,7 +231,28 @@ void printPokemonDocData(struct PokemonDocData monData)
     }
     printf("\n");
     printf("\t\t]\n");
+    printf("\t},\n");
+    printf("\t\"evolution\": {\n");
+    printf("\t\t\"next\": [\n");
+    for(u8 i = 0; i < monData.numNextEvolutions; i++)
+    {
+        if(i > 0) printf(",\n");
+        printf("\t\t\t{\n");
+        printf("\t\t\t\t\"species_id\": \"%s\",\n", monData.next_evolutions[i].species_id);
+        printf("\t\t\t\t\"name\": \"%s\",\n", monData.next_evolutions[i].name);
+        printf("\t\t\t\t\"method\": \"%s\",\n", monData.next_evolutions[i].method);
+        // @TODO: Retrieve next evolution parameter
+        printf("\t\t\t\t\"parameter\": \"%s\"\n", monData.next_evolutions[i].parameter);
+        printf("\t\t\t}");
+    }
+    printf("\n");
+
+    printf("\t\t],\n");
+    printf("\t\t\"final\": [\n");
+    // @TODO: Print Final Evolutions for this Mon
+    printf("\t\t]\n");
     printf("\t}\n");
+
     printf("},\n");
 }
 
@@ -333,6 +368,21 @@ int main()
             gPokemonDocs[i].egg_moves[j].pp = gBattleMoves[gPokemonDocs[i].egg_moves[j].num].pp;
             gPokemonDocs[i].egg_moves[j].accuracy = gBattleMoves[gPokemonDocs[i].egg_moves[j].num].accuracy;
             gPokemonDocs[i].egg_moves[j].description = gMoveDescriptionPointers[gPokemonDocs[i].egg_moves[j].num - 1];
+        }
+
+        gPokemonDocs[i].numNextEvolutions = 0;
+        for (u8 j = 0; j < EVOS_PER_MON; j++)
+        {
+            if (gEvolutionTable[i][j].method == EVO_NONE) break;
+
+            gPokemonDocs[i].next_evolutions[j].num = gEvolutionTable[i][j].targetSpecies;
+            strcpy(gPokemonDocs[i].next_evolutions[j].species_id, gSpeciesNames[gPokemonDocs[i].next_evolutions[j].num]);
+            strcpy(gPokemonDocs[i].next_evolutions[j].name, gSpeciesNames[gPokemonDocs[i].next_evolutions[j].num]);
+            capitalizeString(gPokemonDocs[i].next_evolutions[j].name);
+            strcpy(gPokemonDocs[i].next_evolutions[j].method, gEvolutionMethodNames[gEvolutionTable[i][j].method]);
+            gPokemonDocs[i].numNextEvolutions++;
+
+            // printf("%s evolves into %s via %s\n", gPokemonDocs[i].name, gPokemonDocs[i].next_evolutions[j].name, gPokemonDocs[i].next_evolutions[j].method);
         }
 
         printPokemonDocData(gPokemonDocs[i]);
