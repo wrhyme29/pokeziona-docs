@@ -18,6 +18,7 @@
 #include "include/tutor_learnsets.h"
 #include "include/tmhm_learnsets.h"
 #include "include/evolution.h"
+#include "include/items.h"
 
 struct PokemonDocDataAbility
 {
@@ -87,9 +88,11 @@ void printPokemonDocData(struct PokemonDocData monData)
     printf("\t\"species_id\": \"%s\",\n", monData.species_id);
     printf("\t\"name\": \"%s\",\n", monData.name);
     printf("\t\"base_name\": \"%s\",\n", monData.base_name);
+    printf("\t\"form_number\": %d,\n", 0); // unused
+    printf("\t\"form_name\": \"%s\",\n", ""); // unused
     printf("\t\"regional_dex_number\": %d,\n", monData.regional_dex_number);
     printf("\t\"national_dex_number\": %d,\n", monData.national_dex_number);
-    
+    printf("\t\"generation\": %d,\n", 3); // @TODO: calculate gen dynamically
     printf("\t\"types\": [\n");
     printf("\t\t\"%s\"", monData.types[0]);
     if(strcmp(monData.types[0], monData.types[1]) != 0)
@@ -241,19 +244,19 @@ void printPokemonDocData(struct PokemonDocData monData)
         printf("\t\t\t\t\"species_id\": \"%s\",\n", monData.next_evolutions[i].species_id);
         printf("\t\t\t\t\"name\": \"%s\",\n", monData.next_evolutions[i].name);
         printf("\t\t\t\t\"method\": \"%s\",\n", monData.next_evolutions[i].method);
-        // @TODO: Retrieve next evolution parameter
         printf("\t\t\t\t\"parameter\": \"%s\"\n", monData.next_evolutions[i].parameter);
         printf("\t\t\t}");
     }
     printf("\n");
 
-    printf("\t\t],\n");
-    printf("\t\t\"final\": [\n");
-    // @TODO: Print Final Evolutions for this Mon
     printf("\t\t]\n");
-    printf("\t}\n");
-
-    printf("},\n");
+    printf("\t},\n");
+    printf("\t\"sprites\": {\n");
+    printf("\t\t\"regular\": \"images/pokemon/%s.png\",\n", monData.species_id);
+    printf("\t\t\"shiny\": \"images/pokemon-shiny/%s.png\"\n", monData.species_id);
+    printf("\t},\n");
+    printf("\t\"forms\": []\n"); // unused
+    printf("}");
 }
 
 struct PokemonDocData gPokemonDocs[NUM_SPECIES] = {0};
@@ -265,6 +268,7 @@ int main()
     for(u16 i = 0; i < NUM_SPECIES; i++)
     {
         if(i == SPECIES_NONE) continue;
+        if(i > 1) printf(",\n");
 
         strcpy(gPokemonDocs[i].id, gSpeciesNames[i]);
         strcpy(gPokemonDocs[i].species_id, gSpeciesNames[i]);
@@ -373,6 +377,8 @@ int main()
         }
 
         gPokemonDocs[i].numNextEvolutions = 0;
+        gPokemonDocs[i].numFinalEvolutions = 0;
+
         for (u8 j = 0; j < EVOS_PER_MON; j++)
         {
             if (gEvolutionTable[i][j].method == EVO_NONE) break;
@@ -382,14 +388,45 @@ int main()
             strcpy(gPokemonDocs[i].next_evolutions[j].name, gSpeciesNames[gPokemonDocs[i].next_evolutions[j].num]);
             capitalizeString(gPokemonDocs[i].next_evolutions[j].name);
             strcpy(gPokemonDocs[i].next_evolutions[j].method, gEvolutionMethodNames[gEvolutionTable[i][j].method]);
+            
+            switch(gEvolutionTable[i][j].method)
+            {
+                case EVO_TRADE_ITEM:
+                case EVO_ITEM:
+                    sprintf(gPokemonDocs[i].next_evolutions[j].parameter, "%s", gItems[gEvolutionTable[i][j].param].name);
+                    break;
+                case EVO_LEVEL_ATK_GT_DEF:
+                case EVO_LEVEL_ATK_EQ_DEF:
+                case EVO_LEVEL_ATK_LT_DEF:
+                case EVO_LEVEL_SILCOON:
+                case EVO_LEVEL_CASCOON:
+                case EVO_LEVEL_NINJASK:
+                case EVO_LEVEL_SHEDINJA:
+                case EVO_LEVEL:
+                    sprintf(gPokemonDocs[i].next_evolutions[j].parameter, "%d", gEvolutionTable[i][j].param);
+                    break;
+                case EVO_RENAME:
+                    sprintf(gPokemonDocs[i].next_evolutions[j].parameter, "%s", gEvolutionRenameTable[i]);
+                    break;
+                case EVO_FRIENDSHIP:
+                case EVO_FRIENDSHIP_DAY:
+                case EVO_FRIENDSHIP_NIGHT:
+                case EVO_TRADE:
+                case EVO_BEAUTY:
+                default:
+                    strcpy(gPokemonDocs[i].next_evolutions[j].parameter, "");
+                    break;
+            }
+            
             gPokemonDocs[i].numNextEvolutions++;
+            
 
-            // printf("%s evolves into %s via %s\n", gPokemonDocs[i].name, gPokemonDocs[i].next_evolutions[j].name, gPokemonDocs[i].next_evolutions[j].method);
+            // printf("%s evolves into %s via %s - %s\n", gPokemonDocs[i].name, gPokemonDocs[i].next_evolutions[j].name, gPokemonDocs[i].next_evolutions[j].method, gPokemonDocs[i].next_evolutions[j].parameter);
         }
 
         printPokemonDocData(gPokemonDocs[i]);
     }
-    printf("]\n");
+    printf("\n]\n");
 
     return 0;
 }

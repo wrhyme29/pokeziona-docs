@@ -6,6 +6,7 @@ RECORDED_OUTPUT_FILE=pokemon.json
 
 mkdir -p ${OUTPUT_DIR}
 
+#cc -E src/test.c > test.txt
 cc -o  ${OUTPUT_DIR}/${APP_NAME} src/autogen.c
 
 if [ $? -ne 0 ]; then 
