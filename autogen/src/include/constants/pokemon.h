@@ -80,6 +80,7 @@
 #define STAT_SPATK   4
 #define STAT_SPDEF   5
 #define NUM_STATS    6
+#define STAT_LENGTH  16
 
 #define STAT_ACC     6 // Only in battles.
 #define STAT_EVASION 7 // Only in battles.

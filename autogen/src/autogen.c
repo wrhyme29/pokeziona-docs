@@ -28,6 +28,13 @@ struct PokemonDocDataAbility
     u16 num;
 };
 
+struct PokemonDocDataStat
+{
+    u8 stat[STAT_LENGTH + 1];
+    u8 name[STAT_LENGTH + 1];
+    u8 amount;
+};
+
 struct PokemonDocDataEvolution
 {
     u8 species_id[POKEMON_NAME_LENGTH + 1];
@@ -67,6 +74,8 @@ struct PokemonDocData
     u8 baseSpeed;
     u8 baseSpAttack;
     u8 baseSpDefense;
+    struct PokemonDocDataStat ev_yields[NUM_STATS];
+    u8 numEvYields;
     struct PokemonDocDataMove level_up_moves[MAX_LEVEL_UP_MOVES];
     u8 numLevelUpMoves;
     struct PokemonDocDataMove tmhm_moves[NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES];
@@ -139,6 +148,39 @@ void printPokemonDocData(struct PokemonDocData monData)
                        + monData.baseSpDefense
                        + monData.baseSpeed;
     printf("\t\"base_stat_total\": %d,\n", baseStatTotal);
+
+    printf("\t\"evs\": [\n");
+    for(u8 i = 0; i < monData.numEvYields; i++)
+    {
+        if(i > 0) printf(",\n");
+        printf("\t\t{\n");
+        printf("\t\t\t\"stat\": \"%s\",\n", monData.ev_yields[i].stat);
+        printf("\t\t\t\"name\": \"%s\",\n", monData.ev_yields[i].name);
+        printf("\t\t\t\"amount\": %d\n", monData.ev_yields[i].amount);
+        printf("\t\t}");
+    }
+    printf("\n");
+    printf("\t],\n");
+     printf("\t\"ev_yield\": [\n");
+    for(u8 i = 0; i < monData.numEvYields; i++)
+    {
+        if(i > 0) printf(",\n");
+        printf("\t\t{\n");
+        printf("\t\t\t\"stat\": \"%s\",\n", monData.ev_yields[i].stat);
+        printf("\t\t\t\"name\": \"%s\",\n", monData.ev_yields[i].name);
+        printf("\t\t\t\"amount\": %d\n", monData.ev_yields[i].amount);
+        printf("\t\t}");
+    }
+    printf("\n");
+    printf("\t],\n");
+
+    printf("\t\"ev_yield_text\": \"");
+    for(u8 i = 0; i < monData.numEvYields; i++)
+    {
+        if(i > 0) printf(", ");
+        printf("%d %s", monData.ev_yields[i].amount, monData.ev_yields[i].name);
+    }
+    printf("\",\n");
 
     printf("\t\"moves\": {\n");
     printf("\t\t\"level_up\": [\n");
@@ -295,6 +337,52 @@ int main()
         gPokemonDocs[i].baseSpeed = gSpeciesInfo[i].baseSpeed;
         gPokemonDocs[i].baseSpAttack = gSpeciesInfo[i].baseSpAttack;
         gPokemonDocs[i].baseSpDefense = gSpeciesInfo[i].baseSpDefense;
+
+        gPokemonDocs[i].numEvYields = 0;
+        for (u8 j = 0; j < NUM_STATS; j++)
+        {
+            switch (j)
+            {
+                case STAT_HP:
+                    if (!gSpeciesInfo[i].evYield_HP) continue;
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].stat, "HP");
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].name, "HP");
+                    gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].amount = gSpeciesInfo[i].evYield_HP;
+                    break;
+                case STAT_ATK:
+                    if (!gSpeciesInfo[i].evYield_Attack) continue;
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].stat, "ATTACK");
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].name, "Attack");
+                    gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].amount = gSpeciesInfo[i].evYield_Attack;
+                    break;
+                case STAT_DEF:
+                    if (!gSpeciesInfo[i].evYield_Defense) continue;
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].stat, "DEFENSE");
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].name, "Defense");
+                    gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].amount = gSpeciesInfo[i].evYield_Defense;
+                    break;
+                case STAT_SPEED:
+                    if (!gSpeciesInfo[i].evYield_Speed) continue;
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].stat, "SPEED");
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].name, "Speed");
+                    gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].amount = gSpeciesInfo[i].evYield_Speed;
+                    break;
+                case STAT_SPATK:
+                    if (!gSpeciesInfo[i].evYield_SpAttack) continue;
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].stat, "SPECIAL_ATTACK");
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].name, "Special Attack");
+                    gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].amount = gSpeciesInfo[i].evYield_SpAttack;
+                    break;
+                case STAT_SPDEF:
+                    if (!gSpeciesInfo[i].evYield_SpDefense) continue;
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].stat, "SPECIAL_DEFENSE");
+                    strcpy(gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].name, "Special Defense");
+                    gPokemonDocs[i].ev_yields[gPokemonDocs[i].numEvYields].amount = gSpeciesInfo[i].evYield_SpDefense;
+                    break;
+            }
+
+            gPokemonDocs[i].numEvYields++;
+        }
 
         gPokemonDocs[i].numLevelUpMoves = 0;
         for (u8 j = 0; j < MAX_LEVEL_UP_MOVES && gLevelUpLearnsets[i][j] != LEVEL_UP_END; j++)
